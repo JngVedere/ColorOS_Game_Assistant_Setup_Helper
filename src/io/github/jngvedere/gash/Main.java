@@ -48,7 +48,7 @@ public class Main extends Activity {
     String installing; // package currently being installed
     TextView progress, banner;
     LinearLayout list;
-    Button openBtn;
+    Button openBtn, removeBtn;
 
     @Override
     protected void onCreate(android.os.Bundle b) {
@@ -266,7 +266,8 @@ public class Main extends Activity {
         boolean allDone = current < 0;
         banner.setVisibility(allDone ? View.VISIBLE : View.GONE);
         banner.setText("✅ 설정이 끝났습니다. 등록한 게임을 실행하고 화면 왼쪽 가장자리를 안쪽으로 밀면 패널이 열립니다."
-                + (pkg(GC) == 2 ? "" : "\n게임 지원은 앱 서랍의 '게임 지원' 아이콘으로 여세요."));
+                + (pkg(GC) == 2 ? "" : "\n게임 지원은 앱 서랍의 '게임 지원' 아이콘으로 여세요.")
+                + "\nGASH가 더 필요 없으면 맨 아래 'GASH 지우기'로 지워도 됩니다.");
 
         list.removeAllViews();
         for (int i = 0; i < st.length; i++) {
@@ -276,6 +277,8 @@ public class Main extends Activity {
 
         boolean canOpen = pkg(GA) == 2 && pkg(GC) == 2 && setupDone();
         openBtn.setVisibility(canOpen ? View.VISIBLE : View.GONE);
+        // Setup finished: GASH is optional now (Game Assistant has its own drawer icon), so offer to remove it.
+        removeBtn.setVisibility(allDone ? View.VISIBLE : View.GONE);
     }
 
     // ---------- UI ----------
@@ -307,7 +310,12 @@ public class Main extends Activity {
         root.addView(progress);
         root.addView(banner);
         root.addView(list);
+        removeBtn = new Button(this);
+        removeBtn.setText("GASH 지우기");
+        removeBtn.setOnClickListener(v -> open(new Intent(Intent.ACTION_DELETE, Uri.parse("package:" + getPackageName()))));
+
         root.addView(openBtn);
+        root.addView(removeBtn);
         ScrollView sv = new ScrollView(this);
         sv.addView(root);
         setContentView(sv);
@@ -396,7 +404,7 @@ public class Main extends Activity {
         }
     }
 
-    /** Settings → System & update → Enhancement services (OPPO action, no permission required). */
+    /** Settings → System & update → Enhancement services (needs oplus.permission.settings.LAUNCH_FOR_EXPORT, a normal permission). */
     void openEnhancement() {
         try {
             startActivity(new Intent("oplus.intent.action.settings.STRENGTHEN_SERVICE"));
