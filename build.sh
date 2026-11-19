@@ -5,8 +5,8 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 # App version: VERSION follows SemVer (see CHANGELOG.md); VERSION_CODE must go up by 1 for every release.
-VERSION=1.1.0
-VERSION_CODE=2
+VERSION=1.1.1
+VERSION_CODE=3
 
 SDK="${SDK:-$LOCALAPPDATA/Android/Sdk}"
 BT="${BT:-$SDK/build-tools/android-37.0}"

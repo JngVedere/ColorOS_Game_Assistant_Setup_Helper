@@ -225,9 +225,11 @@ public class Main extends Activity {
                 v -> openGa());
         s5.info = true;
 
-        Step s6 = new Step("앱 서랍 아이콘 만들기", drawer,
-                drawer ? "앱 서랍에 '게임 지원' 아이콘이 있습니다. Game Center 없이도 이 아이콘으로 열립니다."
-                        : "눌러서 게임 지원을 연 뒤 왼쪽 위 프로필 → More settings → Add to the Home screen → 'Add'.",
+        Step s6 = new Step("앱 서랍 아이콘 켜기 (필수)", drawer,
+                drawer ? "앱 서랍에 '게임 지원' 아이콘이 켜져 있습니다. Game Center 없이도 이 아이콘으로 열립니다."
+                        : "꼭 켜 두세요. Game Center 없이 게임 지원을 여는 유일한 입구입니다.\n"
+                        + "눌러서 게임 지원을 연 뒤 왼쪽 위 프로필 → More settings → Add to the Home screen → 'Add'. "
+                        + "(버튼 이름과 달리 홈 화면이 아니라 앱 서랍에 '게임 지원' 아이콘이 켜집니다)",
                 v -> openGa());
 
         // Game Center missing only counts as "deleted" once it is no longer needed (setup done + drawer icon).

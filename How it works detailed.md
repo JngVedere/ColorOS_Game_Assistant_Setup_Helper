@@ -94,6 +94,10 @@ return !getPackageManager().queryIntentActivities(i, 0).isEmpty();
 ```
 
 - 게임 지원을 '사용 안 함'으로 바꾸면 ②(pinned shortcut)는 런처에서 지워집니다. ③의 활성화 상태는 게임 지원의 데이터를 지워도 남았습니다.
+- 그래서 **③(앱 서랍 아이콘)은 반드시 활성화해야 합니다.** Game Center 없이 남는 입구는 사실상 ③뿐이고, GASH도 ③이 켜지기 전에는 7단계(Game Center 삭제)를 막습니다.
+- 두 "홈 화면에 추가" 버튼은 서로 다릅니다. 동의 화면의 **Add to Home screen** 토글은 ②(홈 화면 바로가기)를 만들고,
+  More settings의 **Add to the Home screen → Add** 는 ③(앱 서랍 아이콘)만 켭니다(홈 화면에는 놓이지 않음).
+  10.43.20의 동의 화면에서는 토글이 보이지 않았습니다.
 
 ## 5. 게임 중 패널은 별개
 
