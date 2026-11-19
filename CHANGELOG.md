@@ -1,0 +1,19 @@
+# Changelog
+
+GASH 버전은 [Semantic Versioning](https://semver.org/lang/ko/)을 따릅니다.
+버전은 `build.sh` 의 `VERSION` 에, 릴리즈마다 1씩 올리는 정수는 `VERSION_CODE` 에 있습니다.
+
+- **MAJOR**: 기존 설치 위에 업데이트할 수 없게 되는 변경 (패키지 이름/서명 키 변경 등), 기존 설정 흐름을 깨는 변경
+- **MINOR**: 기존 동작을 유지하면서 기능·단계 추가
+- **PATCH**: 버그 수정, 문구 수정
+
+## 1.0.0
+
+첫 배포 버전.
+
+- 게임 지원 설정을 7단계 체크리스트로 안내 (완료 / 진행 중 / 대기 / 직접 확인 표시, 단계를 누르면 해당 화면으로 이동)
+- 게임 지원·Game Center 설치/켜기, 동의, 앱 향상 서비스, 게임 등록, 앱 서랍 아이콘, Game Center 삭제/유지 단계
+- 설치 권한을 허용하고 돌아오면 설치를 자동으로 이어감
+- 설정이 끝나고 Game Center를 유지하면 아이콘을 누르는 즉시 게임 지원을 열고 종료
+- 이름 GASH (Game Assistant Setup Helper), 새로 그린 아이콘
+- 패키지 이름 `io.github.jngvedere.gash`, 릴리즈 키 서명 지원 (이전 개발용 `dev.local.gasetup` 과는 별개 앱)

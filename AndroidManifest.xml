@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.github.jngvedere.gash">
+
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+    <!-- OPPO Settings: needed to open "Enhancement services" directly (protectionLevel normal = auto-granted) -->
+    <uses-permission android:name="oplus.permission.settings.LAUNCH_FOR_EXPORT" />
+
+    <!-- Android 11+ package visibility: needed to see these apps' install/enabled state -->
+    <queries>
+        <package android:name="com.oplus.games" />
+        <package android:name="com.nearme.gamecenter" />
+        <package android:name="com.heytap.market" />
+    </queries>
+
+    <application android:label="GASH" android:icon="@mipmap/ic_launcher" android:allowBackup="false"
+        android:theme="@android:style/Theme.DeviceDefault.DayNight">
+        <activity android:name=".Main" android:exported="true" android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

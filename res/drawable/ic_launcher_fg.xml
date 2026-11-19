@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GASH icon (original artwork): gamepad with a D-pad and a check mark cut out = "game setup done".
+     evenOdd makes the D-pad and check transparent, so the same drawable also works as the themed (monochrome) layer. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M40,40 H68 C75,40 80,44 81,51 L83,64 C84,70 79,74 74,72 L67,66 H41 L34,72 C29,74 24,70 25,64 L27,51 C28,44 33,40 40,40 Z
+            M38,49 H42 V53 H46 V57 H42 V61 H38 V57 H34 V53 H38 Z
+            M58.5,56.5 L61,54 L64,57 L70.5,50.5 L73,53 L64,62 Z" />
+</vector>
